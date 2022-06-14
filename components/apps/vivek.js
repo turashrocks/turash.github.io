@@ -346,46 +346,27 @@ function Projects() {
                 </div>
             </div>
 
+            <div className="container mx-auto px-20">
 
-            {
-                project_list.map((project, index) => {
-                    const projectNameFromLink = project.link.split('/')
-                    const projectName = projectNameFromLink[projectNameFromLink.length - 1]
-                    return (
-                        <a key={index} href={project.link} target="_blank" rel="noreferrer" className="flex w-full flex-col px-4">
-                            <div className="w-full py-1 px-2 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 cursor-pointer">
-                                <div className="flex flex-wrap justify-between items-center">
-                                    <div className='flex justify-center items-center'>
-                                        <div className=" text-base md:text-lg mr-2">{project.name.toLowerCase()}</div>
-                                        <iframe src={`https://ghbtns.com/github-btn.html?user=vivek9patel&repo=${projectName}&type=star&count=true`} frameBorder="0" scrolling="0" width="150" height="20" title={project.name.toLowerCase()+"-star"}></iframe>
-                                    </div>
-                                    <div className="text-gray-300 font-light text-sm">{project.date}</div>
-                                </div>
-                                <ul className=" tracking-normal leading-tight text-sm font-light ml-4 mt-1">
-                                    {
-                                        project.description.map((desc, index) => {
-                                            return <li key={index} className="list-disc mt-1 text-gray-100">{desc}</li>;
-                                        })
-                                    }
-                                </ul>
-                                <div className="flex flex-wrap items-start justify-start text-xs py-2">
-                                    {
-                                        (project.domains ?
-                                            project.domains.map((domain, index) => {
-                                                const borderColorClass = `border-${tag_colors[domain]}`
-                                                const textColorClass = `text-${tag_colors[domain]}`
-
-                                                return <span key={index} className={`px-1.5 py-0.5 w-max border ${borderColorClass} ${textColorClass} m-1 rounded-full`}>{domain}</span>
-                                            })
-
-                                            : null)
-                                    }
-                                </div>
-                            </div>
+                <div>
+                    <div className="rounded p-4 shadow md:flex justify-between" style= {{ cursor: 'auto' }}o>
+                    <div>
+                        <a href="https://goflank.com" target="_blank">
+                        <h4 className="text-2xl font-semibold">Go Flank</h4><em> https://goflank.com</em>
                         </a>
-                    )
-                })
-            }
+                        <div className="flex items-center mt-4">
+                        <div className="text-xs text-black uppercase font-bold tracking-wider bg-gray-300 inline-block px-2 py-1 rounded mr-2">
+                                        Vue.js
+                                    </div>
+                        <div className="text-xs text-black uppercase font-bold tracking-wider bg-gray-300 inline-block px-2 py-1 rounded mr-2">
+                                        Laravel
+                                    </div>
+                        </div>
+                    </div>
+             
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
